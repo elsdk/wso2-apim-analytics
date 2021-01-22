@@ -1,0 +1,56 @@
+{
+  "name": "APIM TOP SUBSCRIBERS",
+  "id": "APIMTopSubscribers",
+  "thumbnailURL": "",
+  "configs": {
+    "pubsub": {
+      "types": ["subscriber"]
+    },
+    "providerConfig" : {
+      "configs": {
+        "type": "RDBMSStreamingDataProvider",
+        "config": {
+          "datasourceName": "AM_DB",
+          "queryData": {
+            "query": "select api.CREATED_BY as API_CREATED_BY, count(subc.SUBSCRIPTION_ID) as count from AM_API api, AM_SUBSCRIPTION subc where api.API_ID=subc.API_ID AND api.CONTEXT {{contextCondition}} group by api.CREATED_BY"
+          },
+          "publishingInterval": 360000,
+          "tableName": "AM_API",
+          "incrementalColumn": "count",
+          "publishingLimit": 2147483647,
+          "isPurgingEnable": false
+        }
+      }
+    },
+    "options": [
+      {
+        "id": "header",
+        "title": "Header",
+        "type": {
+          "name": "BOOLEAN",
+          "possibleValues": [
+            true,
+            false
+          ]
+        },
+        "defaultValue": true
+      },
+      {
+        "id": "headerTitle",
+        "title": "Widget Title",
+        "type": {
+          "name": "TEXT"
+        },
+        "defaultValue": "Top Subscriptions per Provider"
+      },
+      {
+        "id": "drillDown",
+        "title": "Subscription Analytics Page",
+        "type": {
+          "name": "TEXT"
+        },
+        "defaultValue": ""
+      }
+    ]
+  }
+}

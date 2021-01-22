@@ -1,0 +1,8 @@
+{
+  "config.error.body": "Cannot fetch provider configuration for APIM Geo Based Invocations widget",
+  "config.error.heading": "Configuration Error !",
+  "nodata.error.body": "No data available for the selected options",
+  "nodata.error.heading": "No Data Available !",
+  "widget.heading": "GEO LOCATION BASED INVOCATIONS"
+}
+

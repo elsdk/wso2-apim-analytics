@@ -1,0 +1,18 @@
+{
+  "alert.severity.mild": "Mild",
+  "alert.severity.moderate": "Moderate",
+  "alert.severity.severe": "Severe",
+  "api.label": "API",
+  "config.error.body": "Cannot fetch provider configuration for APIM Alert Summary widget",
+  "config.error.heading": "Configuration Error !",
+  "limit": "Limit",
+  "nodata.error.body": "No data available for the selected options",
+  "nodata.error.heading": "No Data Available !",
+  "table.heading.apiname": "API NAME",
+  "table.heading.details": "DETAILS",
+  "table.heading.time": "ALERT TIME",
+  "table.heading.type": "ALERT TYPE",
+  "table.heading.severity": "SEVERITY",
+  "sort.label.title": "Sort",
+  "widget.heading" : "ALERT SUMMARY"
+}

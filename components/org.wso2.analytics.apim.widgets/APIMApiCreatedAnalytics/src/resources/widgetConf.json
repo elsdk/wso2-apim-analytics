@@ -1,0 +1,56 @@
+{
+  "name": "APIM API CREATED ANALYTICS",
+  "id": "APIMApiCreatedAnalytics",
+  "thumbnailURL": "",
+  "configs": {
+    "pubsub": {
+      "types": ["subscriber"]
+    },
+    "providerConfig" : {
+      "configs": {
+        "type": "RDBMSStreamingDataProvider",
+        "config": {
+          "datasourceName": "AM_DB",
+          "queryData": {
+            "query" : "select API_NAME, API_VERSION, CREATED_TIME, CREATED_BY from AM_API where CONTEXT {{contextCondition}} {{filterCondition}} AND CREATED_TIME between '{{timeFrom}}' AND '{{timeTo}}' group by CREATED_TIME, API_ID, API_NAME, API_VERSION, CREATED_BY"
+          },
+          "publishingInterval": 360000,
+          "tableName": "AM_API",
+          "incrementalColumn": "CREATED_TIME",
+          "publishingLimit": 2147483647,
+          "isPurgingEnable": false
+        }
+      }
+    },
+    "options": [
+      {
+        "id": "header",
+        "title": "Header",
+        "type": {
+          "name": "BOOLEAN",
+          "possibleValues": [
+            true,
+            false
+          ]
+        },
+        "defaultValue": true
+      },
+      {
+        "id": "headerTitle",
+        "title": "Widget Title",
+        "type": {
+          "name": "TEXT"
+        },
+        "defaultValue": "APIs Created Over Time"
+      },
+      {
+        "id": "drillDown",
+        "title": "Usage Summary Page",
+        "type": {
+          "name": "TEXT"
+        },
+        "defaultValue": "usage-summary"
+      }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "name" : "APIM DEVELOPER SIGNUPS",
+  "id" : "APIMDeveloperSignups",
+  "thumbnailURL" : "",
+  "configs" : {
+    "pubsub" : {
+      "types" : ["subscriber"]
+    },
+    "providerConfig" : {
+      "configs" : {
+        "type" : "RDBMSStreamingDataProvider",
+        "config" : {
+          "datasourceName": "AM_DB",
+          "queryData" : {
+            "totalQuery" : "select count(SUBSCRIBER_ID) as count, SUBSCRIBER_ID from AM_SUBSCRIBER where TENANT_ID={{tenantId}} group by SUBSCRIBER_ID",
+            "weekQuery" : "select count(SUBSCRIBER_ID) as count, SUBSCRIBER_ID from AM_SUBSCRIBER where TENANT_ID={{tenantId}} and CREATED_TIME between '{{weekStart}}' and '{{weekEnd}}' group by SUBSCRIBER_ID"
+          },
+          "tableName": "AM_SUBSCRIBER",
+          "incrementalColumn": "SUBSCRIBER_ID",
+          "publishingLimit": 2147483647,
+          "isPurgingEnable": false
+        }
+      }
+    },
+    "options" : [
+      {
+        "id" : "header",
+        "title" : "Header",
+        "type" : {
+          "name" : "BOOLEAN",
+          "possibleValues" : [
+            true,
+            false
+          ]
+        },
+        "defaultValue" : true
+      },
+      {
+        "id": "headerTitle",
+        "title": "Widget Title",
+        "type": {
+          "name": "TEXT"
+        },
+        "defaultValue": "Developer Signup Summary"
+      }
+    ]
+  }
+}

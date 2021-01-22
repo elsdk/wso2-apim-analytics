@@ -1,0 +1,9 @@
+{
+  "config.error.body": "Cannot fetch provider configuration for APIM Top User Agents widget",
+  "config.error.heading": "Configuration Error !",
+  "createdBy.label": "API Created By",
+  "limit": "Limit :",
+  "nodata.error.body": "No data available for the selected options",
+  "nodata.error.heading": "No Data Available !",
+  "widget.heading": "TOP USER AGENTS"
+}

@@ -1,0 +1,44 @@
+{
+  "name": "API AVAILABILITY",
+  "id": "ApiAvailability",
+  "thumbnailURL": "",
+  "configs": {
+    "pubsub": {
+      "types": ["subscriber"]
+    },
+    "providerConfig" : {
+      "configs": {
+        "type": "SiddhiStoreDataProvider",
+        "config": {
+          "siddhiApp": "@App:name('ApiAvailabilitySiddhi') @store(type='rdbms' , datasource='APIM_ANALYTICS_DB') define table ApimApiAvailabilityInfo(apiName string,apiVersion string,apiCreator string,tenantDomain string,status string);",
+          "queryData": {
+            "apiavailablequery": "from ApimApiAvailabilityInfo on tenantDomain=='{{tenantDomain}}' {{status}} select apiName,apiVersion,apiCreator,status order by apiName asc limit {{limit}};"
+          },
+          "publishingInterval": 360000
+        }
+      }
+    },
+    "options": [
+      {
+        "id": "header",
+        "title": "Header",
+        "type": {
+          "name": "BOOLEAN",
+          "possibleValues": [
+            true,
+            false
+          ]
+        },
+        "defaultValue": true
+      },
+      {
+        "id": "headerTitle",
+        "title": "Widget Title",
+        "type": {
+          "name": "TEXT"
+        },
+        "defaultValue": "API Availability"
+      }
+    ]
+  }
+}

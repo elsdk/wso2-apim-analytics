@@ -1,0 +1,17 @@
+{
+  "name": "date-range-picker",
+  "version": "0.2.0",
+  "private": true,
+  "license": "Apache 2.0",
+  "scripts": {
+    "build": "../node_modules/.bin/webpack -p",
+    "dev": "NODE_ENV=development ../node_modules/.bin/webpack -d --config webpack.config.js --watch --progress",
+    "lint": "eslint"
+  },
+  "devDependencies": {
+    "string-replace-loader": "^2.1.1"
+  },
+  "dependencies": {
+    "moment": "^2.24.0"
+  }
+}

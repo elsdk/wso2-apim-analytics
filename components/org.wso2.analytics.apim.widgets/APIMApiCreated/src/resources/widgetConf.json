@@ -1,0 +1,50 @@
+{
+  "name" : "APIM API CREATED",
+  "id" : "APIMApiCreated",
+  "thumbnailURL" : "",
+  "configs" : {
+    "pubsub" : {
+      "types" : ["subscriber"]
+    },
+    "providerConfig" : {
+      "configs" : {
+        "type" : "RDBMSStreamingDataProvider",
+        "config" : {
+          "datasourceName": "AM_DB",
+          "queryData" : {
+            "totalQuery": "select COUNT(API_ID) as count, API_ID from AM_API where CONTEXT {{contextCondition}} group by API_ID",
+            "weekQuery" : "select COUNT(API_ID) as count, API_ID from AM_API where CONTEXT {{contextCondition}} and CREATED_TIME between '{{weekStart}}' and '{{weekEnd}}' group by API_ID"
+          },
+          "tableName": "AM_API",
+          "incrementalColumn": "API_ID",
+          "publishingLimit": 2147483647,
+          "purgingInterval": 6,
+          "purgingLimit": 6,
+          "isPurgingEnable": false
+        }
+      }
+    },
+    "options": [
+      {
+        "id" : "header",
+        "title" : "Header",
+        "type" : {
+          "name" : "BOOLEAN",
+          "possibleValues" : [
+            true,
+            false
+          ]
+        },
+        "defaultValue": true
+      },
+      {
+        "id": "headerTitle",
+        "title": "Widget Title",
+        "type": {
+          "name": "TEXT"
+        },
+        "defaultValue": "API Created Summary"
+      }
+    ]
+  }
+}

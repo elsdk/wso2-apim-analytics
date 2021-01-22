@@ -1,0 +1,195 @@
+{
+  "dashboard": {
+    "url": "reports",
+    "owner": "admin",
+    "name": "Reports",
+    "description": "Dashboard for reports generation",
+    "landingPage": "home",
+    "parentId": "0",
+    "content": {
+      "readOnly": true,
+      "properties": {},
+      "pages": [
+        {
+          "id": "home",
+          "name": "Home",
+          "content": [
+            {
+              "type": "column",
+              "isClosable": true,
+              "title": "",
+              "width": 100,
+              "content": [
+                {
+                  "type": "row",
+                  "isClosable": true,
+                  "title": "",
+                  "height": 45.31615925058548,
+                  "content": [
+                    {
+                      "type": "stack",
+                      "isClosable": true,
+                      "title": "",
+                      "width": 31.334906936682735,
+                      "content": [
+                        {
+                          "title": "[Placeholder]",
+                          "type": "component",
+                          "component": "APIMPlaceholder",
+                          "props": {
+                            "id": "4bd58a2b-f95c-42a5-a01b-5d9f088dd3ac",
+                            "configs": {
+                              "pubsub": {
+                                "types": [
+                                  "subscriber"
+                                ]
+                              },
+                              "isGenerated": false,
+                              "options": {
+                                "header": false
+                              }
+                            },
+                            "widgetID": "APIMPlaceholder"
+                          },
+                          "isClosable": false,
+                          "header": {
+                            "show": true
+                          },
+                          "componentName": "lm-react-component"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "stack",
+                      "isClosable": true,
+                      "title": "",
+                      "width": 39.34887685981369,
+                      "height": 45.31615925058548,
+                      "content": [
+                        {
+                          "title": "[APIM Monthly API Usage Report]",
+                          "type": "component",
+                          "component": "APIMApiMonthlyUsageReport",
+                          "props": {
+                            "id": "619033ff-10ee-4174-97a0-064bc59260cb",
+                            "configs": {
+                              "pubsub": {
+                                "types": [
+                                  "subscriber"
+                                ],
+                                "publishers": []
+                              },
+                              "isGenerated": false,
+                              "options": {
+                                "header": false
+                              }
+                            },
+                            "widgetID": "APIMApiMonthlyUsageReport"
+                          },
+                          "isClosable": false,
+                          "header": {
+                            "show": true
+                          },
+                          "componentName": "lm-react-component"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "stack",
+                      "isClosable": true,
+                      "title": "",
+                      "width": 29.316216203503583,
+                      "content": [
+                        {
+                          "title": "[Placeholder]",
+                          "type": "component",
+                          "component": "APIMPlaceholder",
+                          "props": {
+                            "id": "3346d57d-9b30-48b0-be3b-afc44cd8bd46",
+                            "configs": {
+                              "pubsub": {
+                                "types": [
+                                  "subscriber"
+                                ]
+                              },
+                              "isGenerated": false,
+                              "options": {
+                                "header": false
+                              }
+                            },
+                            "widgetID": "APIMPlaceholder"
+                          },
+                          "isClosable": false,
+                          "header": {
+                            "show": true
+                          },
+                          "componentName": "lm-react-component"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "stack",
+                  "isClosable": true,
+                  "title": "",
+                  "height": 54.68384074941453,
+                  "content": [
+                    {
+                      "title": "[Placeholder]",
+                      "type": "component",
+                      "component": "APIMPlaceholder",
+                      "props": {
+                        "id": "c5763e06-e483-4520-83c3-b175862beb4f",
+                        "configs": {
+                          "pubsub": {
+                            "types": [
+                              "subscriber"
+                            ],
+                            "publishers": []
+                          },
+                          "isGenerated": false,
+                          "options": {
+                            "header": false
+                          }
+                        },
+                        "widgetID": "APIMPlaceholder"
+                      },
+                      "isClosable": false,
+                      "header": {
+                        "show": true
+                      },
+                      "componentName": "lm-react-component"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "height": 897
+        }
+      ]
+    },
+    "hasOwnerPermission": false,
+    "hasDesignerPermission": false,
+    "hasViewerPermission": false
+  },
+  "widgets": {
+    "generated": [],
+    "custom": [
+      "APIMPlaceholder",
+      "APIMApiMonthlyUsageReport"
+    ]
+  },
+  "permissions": {
+    "viewers": [
+      "apim_analytics:admin_any"
+    ],
+    "owners": [
+      "apim_analytics:admin_carbon.super"
+    ],
+    "editors": [
+      "apim_analytics:admin_carbon.super"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "config.error.body": "Cannot fetch provider configuration for APIM Overall Api Usage widget",
+  "config.error.heading": "Configuration Error !",
+  "filter.column.menu.heading": "Column Name",
+  "filter.label.title": "Filter By",
+  "filter.search.placeholder": "Search Field",
+  "limit": "Limit",
+  "nodata.error.body": "No data available for the selected options",
+  "nodata.error.heading": "No Data Available !",
+  "sort.label.title": "Sort",
+  "table.heading.apiname": "API NAME",
+  "table.heading.apiversion": "VERSION",
+  "table.heading.hits": "HITS ",
+  "widget.heading": "OVERALL API USAGE"
+}
